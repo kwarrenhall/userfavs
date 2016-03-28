@@ -1,12 +1,14 @@
-var leapYear = function(year) {
-  //Lines 2-6 are not necessary for functionality because everything that's not a leap year is returned as false. Lines are used for readability and logic
-  if (parseInt(year) === NaN) {
-    return false;
-  } else if (year === "september") {
-    return false;
-  } else if ((year % 4 === 0) && (year % 100 !== 0) || (year % 400 === 0)) {
-    return true;
-  } else {
-    return false;
-  }
-};
+$(document).ready(function() {
+
+  $("#blanks form").submit(function(event) {
+
+      var fruit = ($("#inputFavoriteFruit").val()).toLowerCase();
+      var film = ($("#inputFavoriteFilm").val()).toLowerCase();
+      var food = ($("#inputFavoriteFood").val()).toLowerCase();
+      var userfavs = [fruit + ", " + film + ", " + food];
+
+$(".fruitresult").text(userfavs);
+
+  event.preventDefault();
+  });
+});
